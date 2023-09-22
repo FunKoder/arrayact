@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arrays</title>
+</head>
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+	body{
+		background-image: radial-gradient(black, #333333 120%);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		height: 80vh;
+		margin: 0;
+		box-sizing: border-box;
+		font-family: 'Montserrat', sans-serif;
+	}
+	.main{
+		margin-top: 11.5%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		background-color: #333333;
+		padding: 50px;
+		text-align: center;
+	}
+	.m1{
+		background-color: #5E5E5E;
+		margin-top: 5px;
+		padding: 5px;
+		height: 350px;
+		width: 350px;
+		border-radius: 4px;
+		font-size: 18px;
+	}
+	button{
+		border-style: none;
+		padding: 9px;
+		border-radius: 3px;
+	}
+	input{
+		border-style: none;
+		padding: 9px;
+		border-radius: 3px;
+	}
+</style>
+<body>
+	<div class="main">
+		<div class="m1">
+			<h1>Array length</h1>
+			<p>Add a phone brand</p>
+			<input type="text" name="ttt" id="val" value="" placeholder="Example: Samsung">	
+			<button onclick="get()">Submit</button>		
+			<h3>Total phones:</h3>
+			<p id="total"></p>
+		</div>
+
+		<div class="m1">
+			<h1>Array toString</h1>
+			<p>Show results</p>
+			<button onclick="show()">Show</button>		
+			<h3>Brands:</h3>
+			<p id="brands"></p>
+		</div>
+
+		<div class="m1">
+			<h1>Array Pop</h1>
+			<p>Remove a brand</p>
+			<button onclick="remove()">Remove</button>		
+			<h3>Removed Brand:</h3>
+			<p id="popped"></p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var phones = [];
+	function get(){
+		valut = document.getElementById('val').value;
+		phones.push(valut);
+		document.getElementById('total').innerHTML = phones.length;
+	}
+
+	function show(){
+		document.getElementById('brands').innerHTML = phones.toString();
+	}
+
+	function remove(){
+		document.getElementById('popped').innerHTML = phones.pop();
+	}
+</script>
+</html>
